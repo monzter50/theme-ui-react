@@ -1,17 +1,19 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
+import styles from './App.styles.js';
+import withStyles from 'react-jss';
+function App({classes,mode='light'}) {
 
-function App() {
+  console.log(classes)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <div className={classes.App}>
+      <header className={classes.AppHeader}>
+        <img src={logo} className={classes.AppLogo} alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <a
-          className="App-link"
+          className={classes.AppLink}
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
@@ -23,4 +25,4 @@ function App() {
   );
 }
 
-export default App;
+export default withStyles(styles)(App);
